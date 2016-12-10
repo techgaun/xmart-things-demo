@@ -18,7 +18,8 @@ defmodule XmartThingsDemo.AuthController do
     conn
     |> fetch_session
     |> put_session(:st_token, st_client.token.access_token)
-    |> redirect(to: "/")
+    |> put_session(:st_uri, uri)
+    |> redirect(to: "/locks")
   end
   def callback(conn, params) do
     Logger.debug inspect params

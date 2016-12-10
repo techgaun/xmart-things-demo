@@ -11,12 +11,19 @@ defmodule XmartThingsDemo.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug :fetch_session
+  end
+
+  scope "/api", XmartThingsDemo do
+    pipe_through :api
+    put "/locks/:cmd", PageController, :lock
   end
 
   scope "/", XmartThingsDemo do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/locks", PageController, :lock
     get "/auth/callback", AuthController, :callback
     get "/auth/:provider", AuthController, :index
   end
