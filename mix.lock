@@ -18,4 +18,4 @@
   "poison": {:hex, :poison, "2.2.0", "4763b69a8a77bd77d26f477d196428b741261a761257ff1cf92753a0d4d24a63", [:mix], []},
   "ranch": {:hex, :ranch, "1.2.1", "a6fb992c10f2187b46ffd17ce398ddf8a54f691b81768f9ef5f461ea7e28c762", [:make], []},
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.1", "28a4d65b7f59893bc2c7de786dec1e1555bd742d336043fe644ae956c3497fbe", [:make, :rebar], []},
-  "xmart_things": {:git, "https://github.com/techgaun/xmart_things.git", "ed308543b0fe174c55c77e31f19a6cb08a4cbefa", []}}
+  "xmart_things": {:hex, :xmart_things, "0.1.0", "b8807b26a798aee34ade1effdc19fb91f59ab2353ad9b85c43d9a3ed6ee9c317", [:mix], [{:oauth2, "~> 0.8.2", [hex: :oauth2, optional: false]}, {:poison, "~> 2.0 or ~> 3.0", [hex: :poison, optional: false]}]}}
