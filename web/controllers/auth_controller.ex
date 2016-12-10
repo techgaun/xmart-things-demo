@@ -4,7 +4,6 @@ defmodule XmartThingsDemo.AuthController do
   """
 
   use XmartThingsDemo.Web, :controller
-  alias BrighterlinkIo.ResponseHelpers
   require Logger
 
   def index(conn, %{"provider" => "smartthings"}) do
