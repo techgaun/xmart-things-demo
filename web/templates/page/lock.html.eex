@@ -1,0 +1,39 @@
+<div class="row marketing">
+  <ul>
+    <%= for lock <- @locks do %>
+      <li><strong><%= lock["name"] %></strong> - <em><%= lock["value"] %></em></li>
+    <% end %>
+  </ul>
+</div>
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h4>Control your locks</h4>
+    <div><a href="#" onclick="handleLock('on')">Turn locks on</a></div>
+    <div><a href="#" onclick="handleLock('off')">Turn locks off</a></div>
+  </div>
+</div>
+<div class="row" id="response"></div>
+<script>
+var elapsed = 10
+function handleLock(status) {
+  var opts = {
+    method: 'put',
+    credentials: 'same-origin'
+  }
+  fetch('/api/locks/' + status, opts)
+    .then(function(resp) {
+      return resp.json()
+    })
+    .then(function(json) {
+      var msg = "API Response<br>" + JSON.stringify(json) + "<br><br>Refreshing page in "
+      setInterval(function(msg) {
+        if (elapsed > 0) {
+          document.getElementById('response').innerHTML = msg + elapsed + " seconds..."
+          elapsed = elapsed - 1
+        } else {
+          window.location.reload()
+        }
+      }, 1000, msg)
+    })
+}
+</script>
