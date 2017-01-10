@@ -5,8 +5,8 @@ This is a sample application that uses [xmart_things](https://github.com/techgau
 ![UI](priv/smartapp/ui.png)
 
 - [Sample Web Services SmartApp groovy script](priv/smartapp/lock.groovy)
-- [Auth Controller](web/controller/auth_controller.ex) has callback route and stores smartthings access token and smartthings endpoint URI for SmartApp in user session.
-- [Page Controller](web/controller/page_controller.ex) has lock related routes and handles listing lock devices and also turning the locks on and off.
+- [Auth Controller](web/controllers/auth_controller.ex) has callback route and stores smartthings access token and smartthings endpoint URI for SmartApp in user session.
+- [Page Controller](web/controllers/page_controller.ex) has lock related routes and handles listing lock devices and also turning the locks on and off.
 
 To start your Phoenix app:
 
