@@ -10,8 +10,7 @@ config :xmart_things_demo, XmartThingsDemo.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "ZlCpoX4Wo3oT+SZllAyJxSPON5Hsh0FGdUljER7njsTJdEfs8nOZBJdbWQPBeTEM",
   render_errors: [view: XmartThingsDemo.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: XmartThingsDemo.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: XmartThingsDemo.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -26,4 +25,4 @@ config :xmart_things,
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"
